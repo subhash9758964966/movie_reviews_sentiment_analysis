@@ -10,6 +10,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint   # save model
 from tensorflow.keras.models import load_model   # load saved model
 import re
 import pickle
+import nltk
 
 app = Flask(__name__)
 
@@ -17,7 +18,7 @@ app = Flask(__name__)
 loaded_model = load_model('models/LSTM.h5')
 token = pickle.load(open('models/token.pkl','rb'))
 english_stops = set(stopwords.words('english'))
-
+nltk.download('stopwords')
 
 @app.route('/')
 def home():

@@ -4,3 +4,4 @@ Jinja2
 numpy
 tensorflow-cpu
 nltk
+scikit-learn
